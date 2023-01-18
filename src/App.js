@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import TextBubbles from "./textBubbles.js";
+
+const messages = [
+  {
+    text: "The ship approaches a rocky coastline, danger looms as the fate of the ship and crew hang in the balance.",
+  },
+  {
+    text: "The ship sailed through the water, its sails catching the wind. The captain, who was experienced and well-trained, carefully guided the vessel through the rough seas.",
+  },
+  { text: "The ship's crew worked together to keep it in good condition." },
+  {
+    text: "As they came close to a rocky coastline, the captain made a wise decision to steer the ship away from danger, and they sailed safely past the hazardous waters.",
+  },
+  { text: "5" },
+  { text: "6" },
+  { text: "7" },
+  { text: "8" },
+  { text: "9" },
+  { text: "10" },
+  { text: "11" },
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TextBubbles messages={messages} />
     </div>
   );
 }
