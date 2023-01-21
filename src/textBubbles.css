@@ -6,8 +6,12 @@
   display: flex;
   flex-direction: column-reverse;
 }
-.text-bubble-container-inner {
+
+.rise-animation {
   animation: rise 0.4s ease-in-out;
+}
+
+.text-bubble-container-inner {
   margin-bottom: 10px;
   display: "block";
   height: auto;

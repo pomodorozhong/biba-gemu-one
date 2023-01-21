@@ -8,17 +8,23 @@ const TextBubble = ({ text, style }) => {
   );
 };
 
-const TextBubbles = ({ messages, display }) => {
+const TextBubbles = ({ messages }) => {
   return (
     <div>
       <div className="text-bubble-container-outter">
         {[...messages].reverse().map((message, i) => (
-          <div
-            className="text-bubble-container-inner"
-            style={{ display: display[messages.length - 1 - i] }}
-          >
-            <TextBubble key={i} text={message.text} />
-          </div>
+          <>
+            {i == 0 ? (
+              // key={Math.random(): https://stackoverflow.com/questions/63186710/how-to-trigger-a-css-animation-on-every-time-a-react-component-re-renders
+              <div className="text-bubble-container-inner rise-animation" key={Math.random()}>
+                <TextBubble key={i} text={message.text} />
+              </div>
+            ) : (
+              <div className="text-bubble-container-inner">
+                <TextBubble key={i} text={message.text} />
+              </div>
+            )}
+          </>
         ))}
       </div>
     </div>

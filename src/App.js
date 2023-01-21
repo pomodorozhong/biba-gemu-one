@@ -24,18 +24,19 @@ const messages = [
 ];
 
 function App() {
-  const [display, setDisplay] = useState(
-    new Array(messages.length).fill("none")
-  );
+  const [displayMessages, setDisplayMessages] = useState([]);
 
   const handleClick = () => {
-    const newDisplay = [...display];
-    newDisplay[display.indexOf("none")] = "block";
-    setDisplay(newDisplay);
+    const index =
+      displayMessages.length >= messages.length
+        ? messages.length - 1
+        : displayMessages.length;
+    const newMessage = messages[index];
+    setDisplayMessages([...displayMessages, newMessage]);
   };
   return (
     <div className="App">
-      <TextBubbles messages={messages} display={display} />
+      <TextBubbles messages={displayMessages} />
       <button onClick={handleClick}>Next</button>
     </div>
   );
