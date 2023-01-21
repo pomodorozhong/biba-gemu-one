@@ -36,7 +36,9 @@ function App() {
   };
   return (
     <div className="App">
-      <TextBubbles messages={displayMessages} />
+      <div onClick={handleClick}>
+        <TextBubbles messages={displayMessages} />
+      </div>
       <button onClick={handleClick}>Next</button>
     </div>
   );
