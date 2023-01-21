@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./textBubbles.css";
 
 const TextBubble = ({ text, style }) => {
@@ -9,17 +8,7 @@ const TextBubble = ({ text, style }) => {
   );
 };
 
-const TextBubbles = ({ messages }) => {
-  const [display, setDisplay] = useState(
-    new Array(messages.length).fill("none")
-  );
-
-  const handleClick = () => {
-    const newDisplay = [...display];
-    newDisplay[display.indexOf("none")] = "block";
-    setDisplay(newDisplay);
-  };
-
+const TextBubbles = ({ messages, display }) => {
   return (
     <div>
       <div className="text-bubble-container-outter">
@@ -32,7 +21,6 @@ const TextBubbles = ({ messages }) => {
           </div>
         ))}
       </div>
-      <button onClick={handleClick}>Next</button>
     </div>
   );
 };

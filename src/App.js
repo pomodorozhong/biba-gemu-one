@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import TextBubbles from "./textBubbles.js";
+import React, { useState } from "react";
 
 const messages = [
   {
@@ -23,9 +24,19 @@ const messages = [
 ];
 
 function App() {
+  const [display, setDisplay] = useState(
+    new Array(messages.length).fill("none")
+  );
+
+  const handleClick = () => {
+    const newDisplay = [...display];
+    newDisplay[display.indexOf("none")] = "block";
+    setDisplay(newDisplay);
+  };
   return (
     <div className="App">
-      <TextBubbles messages={messages} />
+      <TextBubbles messages={messages} display={display} />
+      <button onClick={handleClick}>Next</button>
     </div>
   );
 }
