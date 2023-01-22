@@ -1,0 +1,24 @@
+.status-text {
+  /* display: table-cell; */
+  flex-grow: 1;
+  flex-basis: 35%;
+  text-align: right;
+}
+.status-number {
+  /* display: table-cell; */
+  flex-grow: 1;
+  flex-basis: 7%;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.status-container {
+  text-shadow: 1px 0px 3px #a8a8a8;
+  color: #fff;
+  padding-left: 150px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+}
