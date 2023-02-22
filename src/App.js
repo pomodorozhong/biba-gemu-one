@@ -9,11 +9,16 @@ function App() {
   const [displayMessages, setDisplayMessages] = useState([]);
   const [tempString, setTempString] = useState("");
   const [playerAttributes, setPlayerAttributes] = useState({
+    strength: 51,
+    dexterity: 51,
+    constitution: 51,
+    intelligence: 51,
+    perspective: 51,
+    charisma: 51,
+
     health: 100,
     experience: 0,
     gold: 0,
-    strength: 51,
-    intelligence: 51,
     courage: 51,
   });
   const [tempAttributes, setTempAttributes] = useState({});
